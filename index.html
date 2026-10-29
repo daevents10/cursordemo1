@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aperture — Path Shooter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div>
+            <p class="brand-kicker">Range protocol</p>
+            <h1>Aperture</h1>
+          </div>
+        </div>
+        <p class="controls-hint">
+          <kbd>←</kbd> <kbd>→</kbd> move &nbsp; <kbd>Space</kbd> fire
+        </p>
+      </header>
+
+      <section class="stage" aria-label="Game stage">
+        <aside class="hud" id="hud" hidden>
+          <div class="hud-card">
+            <span class="hud-label">Level</span>
+            <span class="hud-value" id="hud-level">1</span>
+          </div>
+          <div class="hud-card">
+            <span class="hud-label">Hits</span>
+            <span class="hud-value" id="hud-hits">0 / 3</span>
+          </div>
+          <div class="hud-card" id="hud-timer-card">
+            <span class="hud-label">Time</span>
+            <span class="hud-value" id="hud-timer">01:00</span>
+          </div>
+        </aside>
+
+        <canvas id="game" width="960" height="620"></canvas>
+
+        <div class="overlay" id="overlay">
+          <div class="overlay-panel">
+            <p class="overlay-kicker" id="overlay-kicker">Calibration</p>
+            <h2 id="overlay-title">Path interceptor</h2>
+            <p class="overlay-copy" id="overlay-copy">
+              Track the sphere along its corridor. Land three hits before the
+              minute expires to graduate.
+            </p>
+            <button type="button" class="btn" id="overlay-btn">Begin session</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="js/game.js"></script>
+  </body>
+</html>
